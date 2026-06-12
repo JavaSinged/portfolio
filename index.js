@@ -49,4 +49,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // 이메일 클릭 시 클립보드에 복사하는 기능
+  const emailLink = document.getElementById("email-link");
+  const emailText = document.getElementById("email-text");
+
+  if (emailLink && emailText) {
+    emailLink.addEventListener("click", (e) => {
+      const email = emailText.innerText;
+
+      navigator.clipboard
+        .writeText(email)
+        .then(() => {
+          alert(
+            "이메일 주소(" +
+              email +
+              ")가 클립보드에 복사되었습니다. 원하는 메일 서비스에서 붙여넣기 해주세요!"
+          );
+        })
+        .catch((err) => {
+          console.error("이메일 복사 실패:", err);
+        });
+    });
+  }
 });
