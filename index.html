@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
-        <a href="#hero" class="logo">Woong's portpolio</a>
+        <a href="#hero" class="logo">Woong's portfolio</a>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
@@ -39,12 +39,12 @@
             <h2 class="hero-subtitle">Backend Developer</h2>
             <h1 class="hero-title">신지웅</h1>
             <p class="hero-main-desc">
-              Spring Boot 기반의 백엔드 개발을 중심으로, 데이터 흐름과 사용자
-              경험을 함께 고려하는 신입 개발자입니다.
+              기능보다 흐름을 먼저 설계하는 백엔드 개발자입니다.
             </p>
             <p class="hero-sub-desc">
-              기획, DB 설계, API 구현, 프론트엔드 연동, 배포까지 경험하며 실제
-              서비스 흐름을 이해하는 개발자로 성장하고 있습니다.
+              Java와 Spring Boot를 기반으로 DB 설계, API 구현, 프론트엔드 연동,
+              배포까지 경험하며 데이터가 생성되고 전달되는 흐름을 끝까지
+              추적합니다.
             </p>
             <div class="hero-buttons">
               <a href="#contact" class="btn btn-primary">Contact Me</a>
@@ -105,24 +105,37 @@
               <div class="icon">🔍</div>
               <h3>데이터 흐름을 추적하는 문제 해결력</h3>
               <p>
-                API 요청, DB 데이터, 화면 반영 과정에서 문제가 발생했을 때
-                원인을 단계적으로 추적하고 해결하는 데 강점이 있습니다.
+                API 요청, DB 데이터, 화면 반영 과정을 단계별로 확인하며 문제
+                원인을 좁혀갑니다.
+                <br /><br />
+                <strong>GreenCarry</strong>에서는 매장 영업시간과 휴무일
+                데이터가 주문 가능 시간에 정확히 반영되도록 등록·수정 로직을
+                구현했습니다.
               </p>
             </div>
+
             <div class="strength-card glass-card">
               <div class="icon">⚙️</div>
-              <h3>기획부터 배포까지 경험한 서비스 이해도</h3>
+              <h3>기획부터 배포까지 연결하는 서비스 이해도</h3>
               <p>
-                팀 프로젝트에서 기획, DB 설계, 백엔드 구현, 프론트엔드 연동,
-                배포까지 경험하며 서비스 전체 흐름을 이해했습니다.
+                기능 단위 구현에만 머무르지 않고, DB 설계부터 API 구현, 화면
+                연동, 배포 흐름까지 함께 고려합니다.
+                <br /><br />
+                <strong>WithDay</strong>에서는 일정 탐색, 참여 신청, 위시리스트
+                상태가 서버 데이터와 어긋나지 않도록 API 연동 흐름을
+                정리했습니다.
               </p>
             </div>
+
             <div class="strength-card glass-card">
               <div class="icon">🤝</div>
-              <h3>협업과 사용자 관점을 고려한 개발 태도</h3>
+              <h3>협업과 사용자 흐름을 고려한 개발 태도</h3>
               <p>
-                팀 프로젝트에서 팀장 역할을 맡으며 기능 구현뿐 아니라 일정 관리,
-                역할 분담, 사용자 흐름 개선까지 함께 고민했습니다.
+                팀 프로젝트에서 팀장 역할을 맡으며 기능 구현뿐 아니라 역할 분담,
+                일정 관리, 사용자 흐름 개선을 함께 조율했습니다.
+                <br /><br />
+                <strong>WithDay</strong>에서는 모바일 환경에서도 일정 카드와
+                탐색 화면이 깨지지 않도록 반응형 UI를 정리했습니다.
               </p>
             </div>
           </div>
@@ -133,64 +146,121 @@
       <section id="skills" class="section">
         <div class="container">
           <h2 class="section-title">Tech Stack</h2>
+
+          <p class="section-lead">
+            실제 프로젝트에서 중심적으로 사용한 기술과 연동·배포 과정에서 경험한
+            기술을 구분해 정리했습니다.
+          </p>
+
           <div class="skills-grid">
             <div class="skill-category glass-card emphasis">
-              <h3>Backend</h3>
+              <h3>
+                Backend
+                <span class="skill-level main">주력</span>
+              </h3>
               <div class="tags">
-                <span class="tag">Spring Boot</span>
-                <span class="tag">Spring MVC</span>
-                <span class="tag">Spring Security</span>
-                <span class="tag">MyBatis</span>
+                <span class="tag tag-main">Java</span>
+                <span class="tag tag-main">Spring Boot</span>
+                <span class="tag tag-main">Spring MVC</span>
+                <span class="tag tag-main">Spring Security</span>
+                <span class="tag tag-main">JWT</span>
+                <span class="tag tag-main">MyBatis</span>
               </div>
+              <p class="skill-note">
+                REST API 구현, 인증/인가, 서비스 로직 분리, DB 연동을 중심으로
+                사용했습니다.
+              </p>
             </div>
+
             <div class="skill-category glass-card emphasis">
-              <h3>Database</h3>
+              <h3>
+                Database
+                <span class="skill-level main">주력</span>
+              </h3>
               <div class="tags">
-                <span class="tag">MySQL</span>
-                <span class="tag">Oracle</span>
+                <span class="tag tag-main">MySQL</span>
+                <span class="tag tag-main">Oracle</span>
               </div>
+              <p class="skill-note">
+                테이블 설계, 관계 설정, 조건 기반 조회, 프로젝트 데이터 흐름
+                설계에 사용했습니다.
+              </p>
             </div>
+
             <div class="skill-category glass-card emphasis">
-              <h3>Infra</h3>
+              <h3>
+                Frontend
+                <span class="skill-level project">프로젝트 경험</span>
+              </h3>
               <div class="tags">
-                <span class="tag">AWS EC2</span>
-                <span class="tag">AWS S3</span>
-                <span class="tag">CloudFront</span>
-                <span class="tag">AWS RDS</span>
-                <span class="tag">Render</span>
-                <span class="tag">Vercel</span>
+                <span class="tag tag-project">React</span>
+                <span class="tag tag-project">Vite</span>
+                <span class="tag tag-project">React Router</span>
+                <span class="tag tag-project">TanStack Query</span>
+                <span class="tag tag-project">Zustand</span>
+                <span class="tag tag-project">Axios</span>
+                <span class="tag tag-project">CSS Modules</span>
+                <span class="tag tag-project">MUI</span>
               </div>
+              <p class="skill-note">
+                서버 API 연동, 화면 상태 관리, 반응형 UI 구현 과정에서
+                사용했습니다.
+              </p>
             </div>
-            <div class="skill-category glass-card emphasis">
-              <h3>DevOps</h3>
-              <div class="tags">
-                <span class="tag">Git</span>
-                <span class="tag">GitHub</span>
-                <span class="tag">GitHub Actions</span>
-                <span class="tag">CI/CD</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Kubernetes / k3s</span>
-              </div>
-            </div>
+
             <div class="skill-category glass-card">
-              <h3>Language</h3>
+              <h3>
+                Infra / Deploy
+                <span class="skill-level project">배포 경험</span>
+              </h3>
               <div class="tags">
-                <span class="tag">Java</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
+                <span class="tag tag-project">AWS EC2</span>
+                <span class="tag tag-project">AWS S3</span>
+                <span class="tag tag-project">CloudFront</span>
+                <span class="tag tag-project">AWS RDS</span>
+                <span class="tag tag-project">Docker</span>
+                <span class="tag tag-project">Vercel</span>
+                <span class="tag tag-project">Render</span>
               </div>
+              <p class="skill-note">
+                프론트엔드 정적 배포, 백엔드 서버 배포, DB 연결, Docker 실행
+                환경 구성 경험이 있습니다.
+              </p>
             </div>
+
             <div class="skill-category glass-card">
-              <h3>Frontend</h3>
+              <h3>
+                DevOps / Collaboration
+                <span class="skill-level experience">사용 경험</span>
+              </h3>
               <div class="tags">
-                <span class="tag">React</span>
-                <span class="tag">Vite</span>
-                <span class="tag">Zustand</span>
-                <span class="tag">TanStack Query</span>
-                <span class="tag">Axios</span>
-                <span class="tag">CSS Modules</span>
+                <span class="tag tag-experience">Git</span>
+                <span class="tag tag-experience">GitHub</span>
+                <span class="tag tag-experience">GitHub Actions</span>
+                <span class="tag tag-experience">CI/CD</span>
               </div>
+              <p class="skill-note">
+                팀 프로젝트 협업, 브랜치 관리, 프론트엔드 자동 배포 흐름 구성에
+                사용했습니다.
+              </p>
+            </div>
+
+            <div class="skill-category glass-card">
+              <h3>
+                Additional Experience
+                <span class="skill-level experience">경험 있음</span>
+              </h3>
+              <div class="tags">
+                <span class="tag tag-experience">Kubernetes / k3s</span>
+                <span class="tag tag-experience">OneSignal</span>
+                <span class="tag tag-experience">Cloudinary</span>
+                <span class="tag tag-experience">Toss Payments</span>
+                <span class="tag tag-experience">SSE</span>
+              </div>
+              <p class="skill-note">
+                프로젝트 요구사항에 따라 알림, 이미지 업로드, 결제, 실시간 알림,
+                배포 환경을 연동해본 경험이 있습니다.
+              </p>
             </div>
           </div>
         </div>
@@ -228,10 +298,23 @@
                   </ul>
                   <h4>담당 역할</h4>
                   <ul>
-                    <li><strong>팀장</strong> | 프로젝트 기획 | DB 설계</li>
-                    <li>백엔드 주요 API 구현 | 관리자 기능 구현</li>
-                    <li>매장 영업시간/휴무일 데이터 처리 로직 구현</li>
-                    <li>프론트엔드/백엔드 연동 및 배포 흐름 구성</li>
+                    <li>
+                      <strong>팀장</strong>으로 프로젝트 기획, DB 설계, 백엔드
+                      API 구현 흐름을 주도했습니다.
+                    </li>
+                    <li>
+                      매장 영업시간과 휴무일 데이터가 주문 가능 시간에 정확히
+                      반영되도록 등록·수정 로직을 설계하고 구현했습니다.
+                    </li>
+                    <li>
+                      관리자 기능에서 회원, 매장, 리뷰, 문의, 다회용기 데이터를
+                      안정적으로 조회·관리할 수 있도록 API와 화면 연동 구조를
+                      정리했습니다.
+                    </li>
+                    <li>
+                      프론트엔드와 백엔드가 분리된 구조에서 API 응답 형식과
+                      데이터 흐름을 맞추며 배포까지 연결했습니다.
+                    </li>
                   </ul>
                 </div>
                 <div class="tags">
@@ -291,16 +374,27 @@
                   <h4>담당 역할</h4>
                   <ul>
                     <li>
-                      <strong>팀장</strong> | 홈 화면 UI 및 일정 카드 구성
+                      <strong>팀장</strong>으로 홈 화면, 일정 탐색, 내 일정,
+                      위시리스트의 주요 사용자 흐름을 설계하고 구현했습니다.
                     </li>
-                    <li>일정 탐색 화면 구현 및 사용자 경험 개선</li>
-                    <li>일정 참여 신청/취소 화면 흐름 구현</li>
-                    <li>내 일정 화면의 참여중/신청중/호스팅 탭 구조 구현</li>
-                    <li>위시리스트 데이터 연동 및 상태 동기화</li>
-                    <li>API 연동 및 서버 데이터 관리</li>
                     <li>
-                      모바일 반응형 개선 | GitHub Actions 기반 프론트엔드 배포
-                      흐름 구성
+                      일정 카드에 지역, 날짜, 모집 상태, 인원, 금액 정보가
+                      일관되게 표시되도록 데이터 구조와 UI 표시 기준을
+                      정리했습니다.
+                    </li>
+                    <li>
+                      일정 참여 신청·취소, 참여중·신청중·호스팅 탭을 서버 데이터
+                      기준으로 분리해 사용자가 현재 상태를 명확히 확인할 수
+                      있도록 구현했습니다.
+                    </li>
+                    <li>
+                      위시리스트 추가·삭제 후 화면 상태와 서버 데이터가 어긋나지
+                      않도록 API 연동과 상태 동기화 흐름을 개선했습니다.
+                    </li>
+                    <li>
+                      모바일 환경에서도 일정 카드와 탐색 화면이 깨지지 않도록
+                      반응형 UI를 정리하고, GitHub Actions 기반 프론트엔드 배포
+                      흐름을 구성했습니다.
                     </li>
                   </ul>
                 </div>
@@ -363,12 +457,12 @@
             </p>
             <div class="contact-links">
               <a
-                href="mailto:shinjiwoong1656@google.com"
+                href="mailto:shinjiwoong1656@gmail.com"
                 class="contact-item"
                 id="email-link"
               >
                 <span class="icon">✉️</span>
-                <span id="email-text">shinjiwoong1656@google.com</span>
+                <span id="email-text">shinjiwoong1656@gmail.com</span>
               </a>
               <a
                 href="https://github.com/JavaSinged"
@@ -377,10 +471,6 @@
               >
                 <span class="icon">💻</span>
                 <span>GitHub Profile</span>
-              </a>
-              <a href="#" target="_blank" class="contact-item">
-                <span class="icon">📝</span>
-                <span>Notion Resume</span>
               </a>
             </div>
           </div>
