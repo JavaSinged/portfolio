@@ -72,4 +72,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
   }
+
+  // Lightbox Modal
+  const previewImages = document.querySelectorAll(".project-preview-image");
+  const lightbox = document.getElementById("image-lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.getElementById("lightbox-close");
+  const lightboxBackdrop = document.getElementById("lightbox-backdrop");
+
+  if (lightbox && lightboxImg) {
+    const openLightbox = (src, alt) => {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightbox.classList.add("is-active");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("is-lightbox-open");
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("is-active");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("is-lightbox-open");
+      setTimeout(() => {
+        if (!lightbox.classList.contains("is-active")) {
+          lightboxImg.src = "";
+        }
+      }, 300);
+    };
+
+    previewImages.forEach((img) => {
+      img.addEventListener("click", () => {
+        openLightbox(img.src, img.alt);
+      });
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxBackdrop.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("is-active")) {
+        closeLightbox();
+      }
+    });
+  }
 });

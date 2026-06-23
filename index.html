@@ -272,7 +272,7 @@
             <!-- Project 1. GreenCarry -->
             <div class="project-card glass-card">
               <div class="project-thumb">
-                <img src="assets/greencarry.png" alt="GreenCarry Thumbnail" />
+                <img src="assets/greencarry.png" alt="GreenCarry Thumbnail" class="project-preview-image" />
               </div>
               <div class="project-content">
                 <h3 class="project-title">GreenCarry</h3>
@@ -349,7 +349,7 @@
             <!-- Project 2. WithDay -->
             <div class="project-card glass-card">
               <div class="project-thumb">
-                <img src="assets/withday.png" alt="WithDay Thumbnail" />
+                <img src="assets/withday.png" alt="WithDay Thumbnail" class="project-preview-image" />
               </div>
               <div class="project-content">
                 <h3 class="project-title">WithDay</h3>
@@ -481,5 +481,12 @@
     </footer>
 
     <script src="index.js"></script>
+
+    <!-- Image Lightbox Modal -->
+    <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
+      <div class="image-lightbox__backdrop" id="lightbox-backdrop"></div>
+      <button class="image-lightbox__close" id="lightbox-close" aria-label="이미지 닫기">&times;</button>
+      <img class="image-lightbox__img" id="lightbox-img" src="" alt="" />
+    </div>
   </body>
 </html>
