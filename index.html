@@ -272,46 +272,50 @@
             <!-- Project 1. GreenCarry -->
             <div class="project-card glass-card">
               <div class="project-thumb">
-                <img src="assets/greencarry.png" alt="GreenCarry Thumbnail" class="project-preview-image" />
+                <img
+                  src="assets/greencarry.png"
+                  alt="GreenCarry Thumbnail"
+                  class="project-preview-image"
+                />
+                <div class="zoom-badge">🔍 클릭해서 크게 보기</div>
+                <div class="zoom-overlay">크게 보기</div>
               </div>
               <div class="project-content">
                 <h3 class="project-title">GreenCarry</h3>
                 <p class="project-desc">
                   다회용기 사용과 친환경 배달 방식을 중심으로 설계한 음식 주문
-                  플랫폼입니다.
+                  플랫폼입니다.<br />
+                  사용자는 주변 매장을 탐색하고 메뉴를 주문할 수 있으며, 점주는
+                  매장·메뉴·주문·리뷰를 운영하고, 관리자는
+                  회원·매장·리뷰·용기·통계를 관리할 수 있습니다.
                 </p>
                 <div class="project-details">
                   <h4>주요 기능</h4>
                   <ul>
                     <li>주변 매장 조회, 카테고리 필터, 매장명 검색</li>
-                    <li>현재 위치 기반 거리 계산 및 예상 소요 시간 표시</li>
-                    <li>메뉴 옵션/다회용기 선택 및 장바구니 기능</li>
-                    <li>배달 방식별 배달비·탄소 절감량 계산</li>
-                    <li>Toss Payments 기반 주문/결제 흐름</li>
-                    <li>주문 상태 타임라인, 주문 취소, 주문 내역 조회</li>
-                    <li>리뷰 작성/삭제 및 점주 리뷰 답글 기능</li>
-                    <li>점주 매장·메뉴·주문 상태 관리</li>
-                    <li>관리자 회원·매장·리뷰·문의·다회용기·통계 관리</li>
-                    <li>SSE 기반 실시간 알림 수신</li>
+                    <li>메뉴 선택, 장바구니, Toss Payments 기반 결제</li>
+                    <li>주문 상태 타임라인 및 주문 내역 조회</li>
+                    <li>포인트 차감·적립 및 탄소 절감량 계산</li>
+                    <li>점주 매장·메뉴·주문 관리 / 관리자 통합 관리</li>
                   </ul>
                   <h4>담당 역할</h4>
                   <ul>
+                    <li>팀장으로 기획, DB 설계, 백엔드 API 구현 흐름 주도</li>
                     <li>
-                      <strong>팀장</strong>으로 프로젝트 기획, DB 설계, 백엔드
-                      API 구현 흐름을 주도했습니다.
+                      주문 생성 시 포인트 차감, 주문 기본 정보 저장, 주문 상세
+                      저장, 주문 이력 저장 흐름 구현
                     </li>
                     <li>
-                      매장 영업시간과 휴무일 데이터가 주문 가능 시간에 정확히
-                      반영되도록 등록·수정 로직을 설계하고 구현했습니다.
+                      <code>@Transactional</code>을 적용해 주문 생성 중 일부
+                      작업만 성공하는 상황을 방지
                     </li>
                     <li>
-                      관리자 기능에서 회원, 매장, 리뷰, 문의, 다회용기 데이터를
-                      안정적으로 조회·관리할 수 있도록 API와 화면 연동 구조를
-                      정리했습니다.
+                      포인트 차감 쿼리에 DB 단계 조건을 추가해 보유 포인트 초과
+                      사용을 방지
                     </li>
                     <li>
-                      프론트엔드와 백엔드가 분리된 구조에서 API 응답 형식과
-                      데이터 흐름을 맞추며 배포까지 연결했습니다.
+                      주문 완료 시 포인트 적립과 탄소 절감량 누적이 함께
+                      처리되도록 구성
                     </li>
                   </ul>
                 </div>
@@ -349,50 +353,52 @@
             <!-- Project 2. WithDay -->
             <div class="project-card glass-card">
               <div class="project-thumb">
-                <img src="assets/withday.png" alt="WithDay Thumbnail" class="project-preview-image" />
+                <img
+                  src="assets/withday.png"
+                  alt="WithDay Thumbnail"
+                  class="project-preview-image"
+                />
+                <div class="zoom-badge">🔍 클릭해서 크게 보기</div>
+                <div class="zoom-overlay">크게 보기</div>
               </div>
               <div class="project-content">
                 <h3 class="project-title">WithDay</h3>
                 <p class="project-desc">
                   여행, 식사, 문화생활 등 다양한 일정을 만들고 함께할 사람을
-                  모집할 수 있는 일정 동행 플랫폼입니다.
+                  모집할 수 있는 일정 동행 플랫폼입니다.<br />
+                  사용자는 일정을 탐색하고 참여를 신청할 수 있으며, 호스트는
+                  신청자를 승인하거나 거절할 수 있습니다.
                 </p>
                 <div class="project-details">
                   <h4>주요 기능</h4>
                   <ul>
-                    <li>다양한 조건 기반 일정 탐색 및 일정 생성/관리</li>
-                    <li>일정 참여 신청 및 취소</li>
-                    <li>호스트의 참여 신청 승인/거절 관리</li>
-                    <li>참여중, 신청중, 호스팅 일정 탭 구분 관리</li>
-                    <li>사용자 맞춤형 추천 일정 제공</li>
-                    <li>관심 일정 저장을 위한 위시리스트 기능</li>
+                    <li>조건 기반 일정 탐색 및 일정 생성·관리</li>
+                    <li>참여 신청 및 호스트 승인·거절</li>
+                    <li>참여중·신청중·호스팅 탭 구분 관리</li>
+                    <li>위시리스트 및 추천 일정 조회</li>
                     <li>OneSignal 기반 브라우저 푸시 알림</li>
-                    <li>모바일 환경을 고려한 반응형 일정 카드 및 화면 구성</li>
                   </ul>
                   <h4>담당 역할</h4>
                   <ul>
                     <li>
-                      <strong>팀장</strong>으로 홈 화면, 일정 탐색, 내 일정,
-                      위시리스트의 주요 사용자 흐름을 설계하고 구현했습니다.
+                      팀장으로 REST API 명세서를 선행 작성해 요청·응답 기준을
+                      팀과 공유
                     </li>
                     <li>
-                      일정 카드에 지역, 날짜, 모집 상태, 인원, 금액 정보가
-                      일관되게 표시되도록 데이터 구조와 UI 표시 기준을
-                      정리했습니다.
+                      참여 신청 기능에서 모집 상태 확인, 정원 초과 여부 확인,
+                      중복 신청 방지 흐름 설계
                     </li>
                     <li>
-                      일정 참여 신청·취소, 참여중·신청중·호스팅 탭을 서버 데이터
-                      기준으로 분리해 사용자가 현재 상태를 명확히 확인할 수
-                      있도록 구현했습니다.
+                      <code>ParticipationController</code>는 요청 수신에,
+                      <code>ParticipationService</code>는 검증과 상태 저장에
+                      집중하도록 책임 분리
                     </li>
                     <li>
-                      위시리스트 추가·삭제 후 화면 상태와 서버 데이터가 어긋나지
-                      않도록 API 연동과 상태 동기화 흐름을 개선했습니다.
+                      신청 완료 후 <code>NotificationService</code>를 통해 알림
+                      처리가 이어지도록 구성
                     </li>
                     <li>
-                      모바일 환경에서도 일정 카드와 탐색 화면이 깨지지 않도록
-                      반응형 UI를 정리하고, GitHub Actions 기반 프론트엔드 배포
-                      흐름을 구성했습니다.
+                      React Query 기반 탭별 일정 데이터 조회 및 상태 동기화 처리
                     </li>
                   </ul>
                 </div>
@@ -404,7 +410,7 @@
                   ><span class="tag">MySQL</span> <span class="tag">React</span
                   ><span class="tag">Vite</span>
                   <span class="tag">React Router</span
-                  ><span class="tag">TanStack Query</span>
+                  ><span class="tag">React Query</span>
                   <span class="tag">Zustand</span
                   ><span class="tag">Axios</span>
                   <span class="tag">CSS Modules</span
@@ -470,6 +476,14 @@
                 <span class="icon">💻</span>
                 <span>GitHub Profile</span>
               </a>
+              <a
+                href="https://jiwoong-shin.notion.site/Backend-Developer-e2751061ca3a8348a44a01912c8a8c45?pvs=143"
+                target="_blank"
+                class="contact-item"
+              >
+                <span class="icon">📝</span>
+                <span>Notion Profile</span>
+              </a>
             </div>
           </div>
         </div>
@@ -485,7 +499,13 @@
     <!-- Image Lightbox Modal -->
     <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
       <div class="image-lightbox__backdrop" id="lightbox-backdrop"></div>
-      <button class="image-lightbox__close" id="lightbox-close" aria-label="이미지 닫기">&times;</button>
+      <button
+        class="image-lightbox__close"
+        id="lightbox-close"
+        aria-label="이미지 닫기"
+      >
+        <!-- &times; -->
+      </button>
       <img class="image-lightbox__img" id="lightbox-img" src="" alt="" />
     </div>
   </body>
