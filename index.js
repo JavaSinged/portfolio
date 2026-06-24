@@ -79,11 +79,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxImg = document.getElementById("lightbox-img");
   const lightboxClose = document.getElementById("lightbox-close");
   const lightboxBackdrop = document.getElementById("lightbox-backdrop");
+  
+  const lightboxImageWrap = document.getElementById("lightbox-image-wrap");
+  const btnZoomIn = document.getElementById("lightbox-zoom-in");
+  const btnZoomOut = document.getElementById("lightbox-zoom-out");
+  const btnReset = document.getElementById("lightbox-reset");
+  const btnOriginal = document.getElementById("lightbox-open-original");
 
-  if (lightbox && lightboxImg) {
-    const openLightbox = (src, alt) => {
-      lightboxImg.src = src;
+  if (lightbox && lightboxImg && lightboxImageWrap) {
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+
+    const updateTransform = () => {
+      lightboxImageWrap.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    };
+
+    const resetTransform = () => {
+      scale = 1;
+      translateX = 0;
+      translateY = 0;
+      updateTransform();
+    };
+
+    const openLightbox = (src, fullSrc, alt) => {
+      lightboxImg.src = fullSrc || src;
       lightboxImg.alt = alt;
+      if (btnOriginal) {
+        btnOriginal.href = fullSrc || src;
+      }
+      resetTransform();
       lightbox.classList.add("is-active");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.classList.add("is-lightbox-open");
@@ -93,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lightbox.classList.remove("is-active");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.classList.remove("is-lightbox-open");
+      resetTransform();
       setTimeout(() => {
         if (!lightbox.classList.contains("is-active")) {
           lightboxImg.src = "";
@@ -102,7 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     previewImages.forEach((img) => {
       img.addEventListener("click", () => {
-        openLightbox(img.src, img.alt);
+        const fullSrc = img.getAttribute("data-fullsrc");
+        openLightbox(img.src, fullSrc, img.alt);
       });
     });
 
@@ -113,6 +143,63 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "Escape" && lightbox.classList.contains("is-active")) {
         closeLightbox();
       }
+    });
+
+    // Zoom Controls
+    if (btnZoomIn) {
+      btnZoomIn.addEventListener("click", () => {
+        scale = Math.min(scale + 0.5, 3);
+        updateTransform();
+      });
+    }
+    if (btnZoomOut) {
+      btnZoomOut.addEventListener("click", () => {
+        scale = Math.max(scale - 0.5, 1);
+        if (scale === 1) {
+          translateX = 0;
+          translateY = 0;
+        }
+        updateTransform();
+      });
+    }
+    if (btnReset) {
+      btnReset.addEventListener("click", resetTransform);
+    }
+
+    // Drag (Pan) Logic
+    lightboxImageWrap.addEventListener("mousedown", (e) => {
+      if (scale <= 1) return;
+      isDragging = true;
+      startX = e.clientX - translateX;
+      startY = e.clientY - translateY;
+      lightboxImageWrap.classList.add("is-dragging");
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      updateTransform();
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+      lightboxImageWrap.classList.remove("is-dragging");
+    });
+
+    // Mouse Wheel Zoom
+    lightboxImageWrap.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        scale = Math.min(scale + 0.2, 3);
+      } else {
+        scale = Math.max(scale - 0.2, 1);
+        if (scale === 1) {
+          translateX = 0;
+          translateY = 0;
+        }
+      }
+      updateTransform();
     });
   }
 });

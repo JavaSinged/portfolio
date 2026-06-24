@@ -276,6 +276,7 @@
                   src="assets/greencarry.png"
                   alt="GreenCarry Thumbnail"
                   class="project-preview-image"
+                  data-fullsrc="assets/greencarry.png"
                 />
                 <div class="zoom-badge">🔍 클릭해서 크게 보기</div>
                 <div class="zoom-overlay">크게 보기</div>
@@ -357,6 +358,7 @@
                   src="assets/withday.png"
                   alt="WithDay Thumbnail"
                   class="project-preview-image"
+                  data-fullsrc="assets/withday.png"
                 />
                 <div class="zoom-badge">🔍 클릭해서 크게 보기</div>
                 <div class="zoom-overlay">크게 보기</div>
@@ -499,14 +501,18 @@
     <!-- Image Lightbox Modal -->
     <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
       <div class="image-lightbox__backdrop" id="lightbox-backdrop"></div>
-      <button
-        class="image-lightbox__close"
-        id="lightbox-close"
-        aria-label="이미지 닫기"
-      >
-        <!-- &times; -->
-      </button>
-      <img class="image-lightbox__img" id="lightbox-img" src="" alt="" />
+      <div class="image-lightbox__controls">
+        <button id="lightbox-zoom-in" class="image-lightbox__btn" aria-label="확대">+</button>
+        <button id="lightbox-zoom-out" class="image-lightbox__btn" aria-label="축소">-</button>
+        <button id="lightbox-reset" class="image-lightbox__btn" aria-label="초기화">Reset</button>
+        <a id="lightbox-open-original" class="image-lightbox__btn" href="#" target="_blank" aria-label="원본 보기">원본 보기</a>
+      </div>
+      <button class="image-lightbox__close" id="lightbox-close" aria-label="이미지 닫기">&times;</button>
+      <div class="image-lightbox__viewport" id="lightbox-viewport">
+        <div class="image-lightbox__image-wrap" id="lightbox-image-wrap">
+          <img class="image-lightbox__img" id="lightbox-img" src="" alt="" />
+        </div>
+      </div>
     </div>
   </body>
 </html>
